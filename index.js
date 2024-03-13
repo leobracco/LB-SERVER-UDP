@@ -89,7 +89,7 @@ mqttClient.on('message', (topic, message) => {
   // Construimos el mensaje a enviar
   const relayNumber = parseInt(parsedMessage.relay, 10);
   const relayAction = parsedMessage.action.toUpperCase();
-  const deviceId = "LB-PDU4-000173";
+  const deviceId = parsedMessage.nserie;
   const mensaje = `${deviceId},RELAYS,${relayNumber},${relayAction}`;
 
   console.log('Mensaje a enviar al Arduino:', mensaje);
